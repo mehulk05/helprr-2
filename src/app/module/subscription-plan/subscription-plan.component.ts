@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AccordionComponent } from 'ngx-bootstrap/accordion';
 
 @Component({
   selector: 'app-subscription-plan',
@@ -7,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubscriptionPlanComponent implements OnInit {
   isActive =true
+
+   registrationArray: Array<any> = [
+    { participantName: "fahad Haque", participantEmail: "fahad.haq@gmail.com", isAccordionOpen: true },
+    { participantName: "fahad Haque", participantEmail: "fahad.haq@gmail.com", isAccordionOpen: false },
+    { participantName: "fahad Haque", participantEmail: "fahad.haq@gmail.com", isAccordionOpen: false }];
+    @ViewChild(AccordionComponent) accordion: AccordionComponent;
   constructor() { }
 
   ngOnInit(): void {
@@ -15,6 +22,10 @@ export class SubscriptionPlanComponent implements OnInit {
 
   toggle(){
     this.isActive = !this.isActive
+  }
+
+  openNextTab(i: number) {
+    //this.accordion.groups[i + 1].isOpen = true;
   }
 
 }

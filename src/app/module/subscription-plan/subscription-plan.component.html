@@ -368,22 +368,13 @@
 
         <div class="faq">
             <div class="container">
-                <h2>Accordion with arrows</h2>
-                <accordion [showArrows]="true">
-                    <accordion-group heading="About me">
-                        Its all about me.
-                    </accordion-group>
-                    <accordion-group heading="Contacts">
-                        This is content of the contacts
-                    </accordion-group>
-                    <accordion-group heading="Map">
-                        Content of the Map
-                    </accordion-group>
-                    <accordion-group>
-                        <accordion-heading>
-                            Custom heading
-                        </accordion-heading>
-                        Its all about me.
+
+                <accordion [closeOthers]="true" style="margin-top:5px;">
+                    <accordion-group *ngFor="let registration of registrationArray; let i = index" #groupval style="margin-top:5px;" [isOpen]="registration.isAccordionOpen">
+                        <div accordion-heading style="width:100%;">
+                            <b><i class="pull-left float-xs-left fa" [ngClass]="{'fa-angle-up': groupval?.isOpen, 'fa-angle-down': !groupval?.isOpen}"></i></b> Registrant No. {{i + 1}}
+                        </div>
+                        <h1>Helo</h1>
                     </accordion-group>
                 </accordion>
             </div>

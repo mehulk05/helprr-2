@@ -11,8 +11,8 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { EditProfileComponent } from './module/edit-profile/edit-profile.component';
 import { ChangePasswordComponent } from './module/change-password/change-password.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AccordionModule } from 'ngx-accordion';
-import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +30,11 @@ import {  CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    AccordionModule
+    AccordionModule.forRoot(),
+    BrowserAnimationsModule
     
   ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
