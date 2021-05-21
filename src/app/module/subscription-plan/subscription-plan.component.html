@@ -1,1 +1,392 @@
-<p>subscription-plan works!</p>
+<div class="wrapper">
+
+
+
+
+    <div class="back">
+        <div class="arrow1">
+            <p>
+                <a routerLink="/"> <i class="arrow left"></i> Back</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="plan">
+        <div class="div1 bg-blue">
+            <div class="plan-title">
+                <h3>Helppr Plans</h3>
+            </div>
+
+            <div class="content">
+                <p>Add powerful features in your schedule to help you do more with Helppr and save you hours do it the smarter way.</p>
+            </div>
+        </div>
+
+
+        <div class="compare">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12 div-border">
+                    <div class="div-left ">
+                        <div class="plan-wrapper">
+                            <div class="tile1">
+                                <h3>Free </h3>
+                            </div>
+                        </div>
+                        <div class="light-button">
+                            <button class="light-color">
+                                Current Plan
+                            </button>
+                        </div>
+                        <div class="left-div-points">
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Advanced Al Summaries</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Important Keyword Extraction</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Word/Concept Explanation</p>
+                            </div>
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Important Data Extraction</p>
+                            </div>
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Access To Discussion Forums (Coming Soon)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <div class="div-right div-border">
+                        <div class="plan-wrapper">
+                            <div class="tile1">
+                                <h3>Premium</h3>
+                            </div>
+                            <div class="toggle">
+                                <div class="toggle-bg">
+                                    <span class="switch" [ngClass]="isActive ? 'active' : ''" (click)="toggle()">Annually</span>
+                                    <span class="switch" [ngClass]="!isActive ? 'active' : ''" (click)="toggle()">Monthly</span>
+                                </div>
+                            </div>
+                            <div class="content2">
+                                <p>$30 year (20% OFF)</p>
+                                <span class="bg-light1">
+                                    <span>Recommended</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="bg-blue-button">
+                            <button class="btn-blue">
+                                Get Started
+                            </button>
+                        </div>
+
+                        <div class="left-div-points">
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Advanced Al Summary Generation</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Important Keyword Extraction</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Word/Concept Explanation</p>
+                            </div>
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Sentence Simplification</p>
+                            </div>
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Inbuild Translation</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Audio File Generator</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Distraction and ad free reading (Coming Soon)</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Access To Discussion Forums (Coming Soon)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="compare-table">
+            <div class="pricing">
+                <div class="row mx-0">
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 bg-blue first-div">
+                        <div class="tile-table">
+                            <h3>All Features</h3>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 ">
+                        <div class="tile-table blue">
+                            <h3>Free</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 ">
+                        <div class="tile-table blue">
+                            <h3>Premium</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mx-0">
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 bg-blue">
+                        <div class="content">
+                            <p>All limited links</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line border-right1">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line1 border-line">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mx-0">
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 bg-blue">
+                        <div class="content">
+                            <p>Important Keyword Extraction</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line border-right1">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line1 border-line">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mx-0">
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 bg-blue">
+                        <div class="content">
+                            <p>Word/Concept Explanation</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line border-right1">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line1 border-line">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mx-0">
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 bg-blue">
+                        <div class="content">
+                            <p>Important Data Extraction</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line border-right1">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line1 border-line">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mx-0">
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 bg-blue">
+                        <div class="content">
+                            <p>Sentence Simplification</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line border-right1">
+                        <div class="tick">
+                            <img src="./assets/images/cross.png">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line1 border-line">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mx-0">
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 bg-blue">
+                        <div class="content">
+                            <p>Inbuild Translation</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line border-right1">
+                        <div class="tick">
+                            <img src="./assets/images/cross.png">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line1 border-line">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mx-0">
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 bg-blue">
+                        <div class="content">
+                            <p>Audio File Generator</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line border-right1">
+                        <div class="tick">
+                            <img src="./assets/images/cross.png">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line1 border-line">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mx-0">
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 bg-blue">
+                        <div class="content">
+                            <p>Distraction and ad free reading (Coming Soon)</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line border-right1">
+                        <div class="tick">
+                            <img src="./assets/images/cross.png">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line1 border-line">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mx-0">
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 bg-blue">
+                        <div class="content">
+                            <p>Access To Discussion Forums (Coming Soon)</p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line border-right1">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 px-0 border-line1 border-line">
+                        <div class="tick">
+                            <img src="./assets/images/tick.png">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="buttons-table">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="butons button-right">
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="butons button-right no-text">
+                        <button class="light-color">Current Plan</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="table-content">
+                        <p>$30/ Yearly</p>
+                    </div>
+                    <div class="butons button-right">
+                        <button class="bg-color">Get Started</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="container">
+                <h2>Accordion with arrows</h2>
+                <accordion [showArrows]="true">
+                    <accordion-group heading="About me">
+                        Its all about me.
+                    </accordion-group>
+                    <accordion-group heading="Contacts">
+                        This is content of the contacts
+                    </accordion-group>
+                    <accordion-group heading="Map">
+                        Content of the Map
+                    </accordion-group>
+                    <accordion-group>
+                        <accordion-heading>
+                            Custom heading
+                        </accordion-heading>
+                        Its all about me.
+                    </accordion-group>
+                </accordion>
+            </div>
+
+        </div>
+    </div>

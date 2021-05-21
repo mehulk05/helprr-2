@@ -1,0 +1,392 @@
+.wrapper {
+    display: block;
+    padding: 0 150px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.1px;
+    color: #171725;
+    margin: 0;
+    padding: 0;
+}
+
+.arrow1 {
+    width: 100%;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.arrow {
+    border: solid #3BADD4;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 4px;
+    margin-right: 15px;
+}
+
+.arrow1 a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+    /* identical to box height */
+    letter-spacing: 0.1px;
+    color: #3BADD4;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.bg-blue {
+    background: #3BADD4;
+}
+
+.div1 {
+    padding: 50px 50px;
+    border-radius: 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.div1 h3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 36px;
+    /* identical to box height, or 103% */
+    text-align: center;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+}
+
+.div1 p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 28px;
+    /* or 140% */
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.div1 .content {
+    padding-top: 20px;
+}
+
+.plan {
+    margin-top: 30px;
+}
+
+.compare {
+    padding-top: 35px;
+}
+
+.div-border {
+    border: 2px solid #3FAFD5;
+    border-radius: 26px;
+    min-height: 400px;
+    padding: 40px 70px;
+    margin-bottom: 25px;
+}
+
+.tile1 h3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 46px;
+    /* identical to box height, or 128% */
+    color: #231D4F;
+}
+
+.toggle-bg {
+    background: #3FAFD5;
+    border-radius: 26.5898px;
+    height: 40px;
+    padding: 2.5px;
+    padding-left: 5px;
+}
+
+.switch {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12.2169px;
+    line-height: 15px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 9px 20px;
+}
+
+.switch.active {
+    background-color: #FFFFFF;
+    font-size: 12.2169px;
+    line-height: 15px;
+    /* identical to box height */
+    color: #3BADD4;
+    box-shadow: 0px 3.59322px 14.3729px rgba(0, 0, 0, 0.1);
+    border-radius: 23.7153px;
+}
+
+.tile1 {
+    /* display: inline; */
+    float: left;
+}
+
+.toggle {
+    margin-top: 5px;
+    /* display: inline; */
+    float: right;
+}
+
+.content2 {
+    width: 100%;
+    /* height: auto; */
+    overflow: hidden;
+}
+
+.content2 p {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    display: inline;
+    font-size: 21px;
+    line-height: 46px;
+    /* identical to box height, or 219% */
+    color: #231D4F;
+    margin-right: 25px;
+}
+
+.bg-light1 {
+    background: rgba(63, 175, 213, 0.2);
+    border-radius: 26.5898px;
+    padding: 6px 20px;
+}
+
+.bg-light1 span {
+    font-size: 12.2169px;
+    line-height: 15px;
+    /* identical to box height */
+    color: #3FAED4;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.content2 {
+    padding-top: 25px;
+}
+
+.plan-wrapper {
+    min-height: 170px;
+}
+
+.bg-blue-button,
+.light-button {
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 30px;
+}
+
+.light-button button {
+    font-family: 'Poppins', sans-serif;
+    background: rgba(63, 175, 213, 0.2);
+    mix-blend-mode: normal;
+    border-radius: 24px;
+    border: none;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #3FAFD5;
+    font-weight: 500;
+    padding: 14px 57px;
+}
+
+.bg-blue-button .btn-blue {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    mix-blend-mode: normal;
+    border-radius: 24px;
+    border: none;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    background: #3FAFD5;
+    font-weight: 500;
+    padding: 14px 57px;
+}
+
+.left-div-points .points img {
+    float: left;
+}
+
+.left-div-points .points p {
+    overflow: hidden;
+    padding-left: 1em;
+    font-size: 15px;
+    line-height: 18px;
+    color: #848199;
+    font-weight: 300;
+}
+
+.points {
+    padding-top: 23px;
+}
+
+.compare {
+    padding-left: 15px;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+
+/*                            table comparison css                            */
+
+
+/* -------------------------------------------------------------------------- */
+
+.compare-table .pricing {
+    border: 7px solid #3FAFD5;
+    box-sizing: border-box;
+    border-radius: 35px;
+}
+
+.compare-table .content {
+    padding: 23px 52px;
+}
+
+.compare-table .content p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+.bg-blue {
+    background: #3FAFD5;
+}
+
+.first-div {
+    border-top-left-radius: 25px
+}
+
+.tick {
+    text-align: center;
+    padding: 23px 0
+}
+
+.compare-table .border-line::after {
+    height: 1px;
+    display: block;
+    width: 81%;
+    background: #d9d9d961;
+    border-right: 1px solid #d9d9d961;
+    content: '';
+    text-align: center;
+    margin-left: 70px;
+}
+
+.border-right1 {
+    border-right: 1px solid #d9d9d961;
+}
+
+.compare-table .border-line1::after {
+    margin-left: -2px;
+}
+
+.compare-table h3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    color: #FFFFFF;
+}
+
+.compare-table .blue h3 {
+    line-height: 29px;
+    /* identical to box height */
+    color: #3FAFD5;
+    text-align: center;
+}
+
+.tile-table {
+    padding: 45px 52px 30px;
+}
+
+.compare-table .mx-0:nth-last-child(1) .bg-blue {
+    border-bottom-left-radius: 25px;
+    box-shadow: 0px 42px 34px rgba(63, 175, 213, 0.295755);
+}
+
+.compare-table .mx-0:nth-last-child(1) content,
+.compare-table .mx-0:nth-last-child(1) .tick {
+    padding-bottom: 35px;
+}
+
+.buttons-table {
+    padding-top: 25px;
+}
+
+.button-right {
+    text-align: center;
+}
+
+.button-right {
+    padding-top: 45px;
+}
+
+.button-right.no-text {
+    padding-top: 75px;
+}
+
+.button-right button {
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    mix-blend-mode: normal;
+    border-radius: 24px;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    padding: 14px 36px;
+}
+
+.button-right .bg-color {
+    font-family: 'Poppins', sans-serif;
+    background: #3FAFD5;
+    mix-blend-mode: normal;
+    border-radius: 24px;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.button-right .light-color {
+    background: rgba(63, 175, 213, 0.2);
+    color: #3FAFD5;
+}
+
+.table-content p {
+    font-size: 20px;
+    line-height: 31px;
+    /* identical to box height, or 155% */
+    color: #231D4F;
+    text-align: center;
+}

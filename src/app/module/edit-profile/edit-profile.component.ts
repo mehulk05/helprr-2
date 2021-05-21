@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class EditProfileComponent implements OnInit {
   form: FormGroup;
-  previewImage="./assets/images/noImg.png"
+  previewImage="./assets/images/noimg.png"
   constructor() { }
 
   ngOnInit(): void {
