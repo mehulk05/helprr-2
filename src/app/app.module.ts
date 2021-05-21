@@ -8,6 +8,9 @@ import { LoginComponent } from './module/login/login.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { EditProfileComponent } from './module/edit-profile/edit-profile.component';
+import { ChangePasswordComponent } from './module/change-password/change-password.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,11 +20,15 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
     LoginComponent,
     FooterComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    EditProfileComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

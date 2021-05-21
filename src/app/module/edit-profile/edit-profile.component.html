@@ -1,0 +1,73 @@
+<div class="wrapper">
+    <div class="sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <div class="myaccount">
+        <div class="title">
+            <h3>My Account</h3>
+        </div>
+
+        <div class="back">
+            <div class="arrow1">
+                <p>
+                    <a routerLink="/"> <i class="arrow left"></i> Back</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="form-class">
+            <form [formGroup]="form" (submit)="onSavePost()" autocomplete="off">
+                <div class="user-leftimg mb-20">
+                    <div class="upload-block position-relative ">
+                        <input type="file" id="inputfile2" class="customfile-upload sr-only" (change)="onFileSelect($event)" />
+                        <label for="inputfile2" class="custom-uploadblock w-100 block font-14 profilephoto-upload p-0">
+                            <!-- <span class="icon-ic_browser-file file-icon"></span>
+                            <p class="upload-text">Drag & drop or <span>Browse</span> file</p> -->
+                            <img [src]=previewImage  width="120" height="120" />
+                            <span class="edit-button icon-ic_edit"></span>
+                        </label>
+                        <p>Profile Picture</p>
+                    </div>
+
+
+
+                </div>
+                <div class="right-form">
+                    <div class="form-group">
+                        <p>Email</p>
+                        <input type="text" formControlName="username" class="form-control1" placeholder="Username" />
+                    </div>
+
+
+
+                    <div class="form-group f-50 mr-1">
+                        <p>First Name</p>
+                        <input type="text" formControlName="username" class="form-control1" placeholder="Username" />
+                    </div>
+
+
+
+                    <div class="form-group f-50">
+                        <p>Last Name</p>
+                        <input type="text" formControlName="username" class="form-control1" placeholder="Username" />
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <p>User Name</p>
+                        <input type="text" formControlName="username" class="form-control1" placeholder="Username" />
+                    </div>
+
+                    <div class="button-submit form-group">
+                        <button class="btn-blue" [disabled]="form.invalid" type="submit">
+                            Update Account
+                          </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
