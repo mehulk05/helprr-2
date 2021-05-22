@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  APP_URL: '',
+  APP_URL: 'https://dev.helppr.ai/',
 };
 
 /*

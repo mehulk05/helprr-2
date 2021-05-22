@@ -13,6 +13,8 @@ import { ChangePasswordComponent } from './module/change-password/change-passwor
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     SidebarComponent,
     EditProfileComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,8 +33,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     FormsModule,
     AccordionModule.forRoot(),
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    SharedModule,
+    HttpClientModule,
+
   ],
 
   providers: [],
