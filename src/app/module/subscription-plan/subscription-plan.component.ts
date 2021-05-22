@@ -10,9 +10,9 @@ export class SubscriptionPlanComponent implements OnInit {
   isActive =true
 
    registrationArray: Array<any> = [
-    { participantName: "fahad Haque", participantEmail: "fahad.haq@gmail.com", isAccordionOpen: true },
-    { participantName: "fahad Haque", participantEmail: "fahad.haq@gmail.com", isAccordionOpen: false },
-    { participantName: "fahad Haque", participantEmail: "fahad.haq@gmail.com", isAccordionOpen: false }];
+    { answer:"abc",participantName: "fahad Haque", participantEmail: "fahad.haq@gmail.com", isAccordionOpen: true },
+    {answer:"aaaaa", participantName: "fahad Haque", participantEmail: "fahad.haq@gmail.com", isAccordionOpen: false },
+    { answer:"awq2w2" ,participantName: "fahad Haque", participantEmail: "fahad.haq@gmail.com", isAccordionOpen: false }];
     @ViewChild(AccordionComponent) accordion: AccordionComponent;
   constructor() { }
 

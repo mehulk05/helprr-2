@@ -9,3 +9,13 @@ h3 {
     margin: 0;
     padding: 0;
 }
+
+.panel.card.panel-default,
+.panel-heading.card-header {
+    background-color: #fff;
+    border: none;
+}
+
+.panel {
+    padding-top: 12px;
+}

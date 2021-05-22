@@ -367,17 +367,23 @@
         </div>
 
         <div class="faq">
-            <div class="container">
-
-                <accordion [closeOthers]="true" style="margin-top:5px;">
-                    <accordion-group *ngFor="let registration of registrationArray; let i = index" #groupval style="margin-top:5px;" [isOpen]="registration.isAccordionOpen">
-                        <div accordion-heading style="width:100%;">
-                            <b><i class="pull-left float-xs-left fa" [ngClass]="{'fa-angle-up': groupval?.isOpen, 'fa-angle-down': !groupval?.isOpen}"></i></b> Registrant No. {{i + 1}}
+            <div class="bg-faq">
+                <div class="title4">
+                    <h3>Frequently Asked Questions</h3>
+                </div>
+                <accordion [closeOthers]="true">
+                    <accordion-group *ngFor="let registration of registrationArray; let i = index" #groupval [isOpen]="registration.isAccordionOpen">
+                        <div accordion-heading class="acc-title" style="width:100%;">
+                            <b><i class="pull-left float-xs-left arrow" [ngClass]="{'up': groupval?.isOpen, 'down': !groupval?.isOpen}"></i></b> {{registration.questions}}
                         </div>
-                        <h1>Helo</h1>
+                        <div class="block font-14" [innerHtml]="registration.answer">
+                        </div>
+
                     </accordion-group>
                 </accordion>
             </div>
 
         </div>
+
     </div>
+</div>
