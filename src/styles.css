@@ -19,3 +19,7 @@ h3 {
 .panel {
     padding-top: 12px;
 }
+
+.panel-body.card-block.card-body {
+    padding: 4px 25px;
+}

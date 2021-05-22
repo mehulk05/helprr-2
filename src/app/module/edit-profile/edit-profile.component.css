@@ -135,3 +135,42 @@ input {
 .button-submit {
     border: none;
 }
+
+@media screen and (max-width:991px) {
+    .sidebar {
+        display: none
+    }
+}
+
+@media screen and (max-width:767px) {
+    .header {
+        padding: 20px 20px;
+    }
+    .wrapper {
+        display: block;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .butttons button {
+        margin-bottom: 20px;
+    }
+    .myaccount {
+        padding: 50px 10px 50px 10px;
+    }
+    .plan {
+        padding: 40px 20px 70px 20px;
+    }
+    .user-leftimg.mb-20 {
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .form-class {
+        display: block;
+    }
+    .right-form {
+        float: none;
+        width: 100%;
+        padding: 0;
+    }
+}
