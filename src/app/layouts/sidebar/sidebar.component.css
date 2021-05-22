@@ -1,0 +1,18 @@
+.sidemenu ul {
+    list-style: none;
+    padding-left: 10px;
+}
+
+.sidemenu ul a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+    letter-spacing: 0.1px;
+    color: #171725;
+    padding-left: 20px;
+}
+
+.sidemenu ul li {
+    padding-top: 45px;
+}
