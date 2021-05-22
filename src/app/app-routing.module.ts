@@ -4,6 +4,7 @@ import { ChangePasswordComponent } from './module/change-password/change-passwor
 import { EditProfileComponent } from './module/edit-profile/edit-profile.component';
 import { HomePageComponent } from './module/home-page/home-page.component';
 import { LoginComponent } from './module/login/login.component';
+import { PaymentComponent } from './module/payment/payment.component';
 import { SubscriptionPlanComponent } from './module/subscription-plan/subscription-plan.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'payment', component: PaymentComponent },
   { path: 'subscription-plan', component: SubscriptionPlanComponent },
   { path: '**', redirectTo: 'home-page' }
 ];

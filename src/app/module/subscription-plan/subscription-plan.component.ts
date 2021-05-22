@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { AccordionComponent } from 'ngx-bootstrap/accordion';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { ApiService } from 'src/app/shared/api.service';
 
 @Component({
   selector: 'app-subscription-plan',
@@ -8,6 +11,12 @@ import { AccordionComponent } from 'ngx-bootstrap/accordion';
 })
 export class SubscriptionPlanComponent implements OnInit {
   isActive =true
+
+  planData:any
+  currentPlan:any={}
+  yearlyData:any
+  monthlyData:any
+
 
    registrationArray: Array<any> = [
     {
@@ -79,18 +88,60 @@ export class SubscriptionPlanComponent implements OnInit {
       },
     ]
     @ViewChild(AccordionComponent) accordion: AccordionComponent;
-  constructor() { }
+    constructor( private apiService : ApiService,
+      private ngxLoader: NgxUiLoaderService,
+      private router:Router) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.currentPlan.type ="Yearly"
+    this.ngxLoader.start()
+    const response: any = await this.apiService.get('payments/config/')
+    if(response){
+      console.log(response.data[0].data)
+      this.planData = response.data[0].data
+      if(this.planData[0].price > this.planData[1].price){
+        this.yearlyData = this.planData[0]
+        this.monthlyData = this.planData[1]
+        this.currentPlan.price = this.yearlyData.unit_amount
+        this.currentPlan.priceId = this.yearlyData.id
+      }
+      else{
+        this.yearlyData = this.planData[1]
+        this.monthlyData = this.planData[0]
+        this.currentPlan.price = this.yearlyData.unit_amount
+        this.currentPlan.priceId = this.yearlyData.id
+      }
+      console.log("yearly",this.yearlyData)
+      console.log("month",this.monthlyData)
+      console.log("currnet",this.currentPlan)
+      
+    }
+   
   }
 
 
-  toggle(){
+  toggle(currentPlan){
+
     this.isActive = !this.isActive
+    if(this.isActive){
+      this.currentPlan.price = this.yearlyData.unit_amount
+      this.currentPlan.priceId = this.yearlyData.id
+      this.currentPlan.type ="Yearly"
+    }
+    else{
+      this.currentPlan.price = this.monthlyData.unit_amount
+      this.currentPlan.priceId = this.monthlyData.id
+      this.currentPlan.type ="Monthly"
+    }
+    console.log(this.currentPlan.price)
   }
 
   openNextTab(i: number) {
     //this.accordion.groups[i + 1].isOpen = true;
   }
 
+  gotoPayment(){
+
+    this.router.navigate(["/payment"],{queryParams:{p:btoa(this.currentPlan.price),i:btoa(this.currentPlan.priceId)}})
+  }
 }

@@ -72,20 +72,20 @@
                             </div>
                             <div class="toggle">
                                 <div class="toggle-bg">
-                                    <span class="switch" [ngClass]="isActive ? 'active' : ''" (click)="toggle()">Annually</span>
-                                    <span class="switch" [ngClass]="!isActive ? 'active' : ''" (click)="toggle()">Monthly</span>
+                                    <span class="switch" [ngClass]="isActive ? 'active' : ''" (click)="toggle(' yearly ')">Annually</span>
+                                    <span class="switch" [ngClass]="!isActive ? 'active' : ''" (click)="toggle(' monthly ')">Monthly</span>
                                 </div>
                             </div>
                             <div class="content2">
-                                <p>$30 year (20% OFF)</p>
-                                <span class="bg-light1">
+                                <p>$ {{currentPlan?.price}}/ {{currentPlan?.type}} {{currentPlan?.type=="Yearly" ? '(20% OFF)' : ''}}</p>
+                                <span class="bg-light1" *ngIf="currentPlan?.type == 'Yearly'">
                                     <span>Recommended</span>
                                 </span>
                             </div>
                         </div>
 
                         <div class="bg-blue-button">
-                            <button class="btn-blue">
+                            <button class="btn-blue" (click)="gotoPayment()">
                                 Get Started
                             </button>
                         </div>
@@ -357,10 +357,10 @@
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="table-content">
-                        <p>$30/ Yearly</p>
+                        <p>${{currentPlan?.price}}</p>
                     </div>
                     <div class="butons button-right">
-                        <button class="bg-color">Get Started</button>
+                        <button class="bg-color" (click)="gotoPayment()">Get Started</button>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div class="container">
+        <div class="row mx-0">
+            <div class="col-lg-12 col-xl-12 mb-4">
+                <div class="form-group custom-card-detail-field">
+                    <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions">
+                    </ngx-stripe-card>
+                </div>
+                <div class="pay-button">
+                    <button class="btn btn-primary" (click)="stripeTokenGenerate()">Pay Now &nbsp;   ${{price}}</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -24,7 +24,6 @@ export class HomePageComponent implements OnInit {
       this.isFreePlan = res.plan == 'free' || 'Free' || "FREE" ? true :false
       console.log(this.isFreePlan)
     } 
-   
   }
 
 }

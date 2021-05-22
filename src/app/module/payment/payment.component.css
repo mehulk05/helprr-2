@@ -1,0 +1,23 @@
+.custom-card-detail-field {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 150px;
+}
+
+.custom-card-detail-field .field {
+    border: 1px solid #eee !important;
+    padding: 0px 15px;
+}
+
+.custom-card-detail-field .__PrivateStripeElement iframe {
+    height: 46px !important;
+}
+
+.pay-button {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+    text-align: center;
+}

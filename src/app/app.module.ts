@@ -16,6 +16,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { environment } from 'src/environments/environment';
+import { NgxStripeModule } from 'ngx-stripe';
+import { PaymentComponent } from './module/payment/payment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +30,7 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
     SidebarComponent,
     EditProfileComponent,
     ChangePasswordComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,11 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
     BrowserAnimationsModule,
     SharedModule,
     HttpClientModule,
-    NgxUiLoaderModule
+    NgxUiLoaderModule,
+    NgxStripeModule.forRoot(environment.STRIPE_PUBLISHER_KEY),
+
+
+
 
   ],
 
