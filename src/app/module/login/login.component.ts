@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ApiService } from 'src/app/shared/api.service';
+import { LocalStorageService } from 'src/app/shared/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -10,11 +12,12 @@ import { ApiService } from 'src/app/shared/api.service';
 })
 export class LoginComponent implements OnInit {
   isLoginMode = true;
-  isLoading = false;
   error: any = null;
   constructor(
     private apiService: ApiService,
-    private ngxLoader: NgxUiLoaderService
+    private ngxLoader: NgxUiLoaderService,
+    private router : Router,
+    private localStorage:LocalStorageService
   ) { }
 
   ngOnInit(): void {
@@ -26,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   async onSubmit(form: NgForm) {
-    this.isLoading = true;
+
     if (!form.valid) {
       return;
     }
@@ -43,14 +46,18 @@ export class LoginComponent implements OnInit {
       }
 
       this.ngxLoader.start();
-      const response: any = this.apiService.post('user/login/', requestBody);
+      const response: any = await this.apiService.post('user/login/', requestBody);
       console.log(response);
+      if(response){
+        this.localStorage.setLocalStore('token',  `Bearer ${response.access_token}`);
+        this.localStorage.setLocalStore('userData',  response.user);
+        this.router.navigate(["/home-page"])
+      }
 
       form.reset()
     }
     else {
       // this.authService.createUser(email, password)
-
       form.reset()
     }
   }

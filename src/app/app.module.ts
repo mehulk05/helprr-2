@@ -15,6 +15,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     SharedModule,
     HttpClientModule,
+    NgxUiLoaderModule
 
   ],
 

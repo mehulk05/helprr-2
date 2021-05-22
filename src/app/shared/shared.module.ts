@@ -8,7 +8,7 @@ import { LocalStorageService } from './local-storage.service';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   providers: [
     ApiService,

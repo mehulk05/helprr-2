@@ -23,3 +23,8 @@ h3 {
 .panel-body.card-block.card-body {
     padding: 4px 25px;
 }
+
+button {
+    outline: none;
+    bordeR: none
+}

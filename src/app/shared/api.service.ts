@@ -23,14 +23,14 @@ export class ApiService {
   ) { }
 
   getHeader(headerOptions, doNotSendAuthorizationParam) {
-    const headerParams = { authorization: '' };
-    if (this.localstorage.getLocalStore('language')) {
-      headerParams['X-L10N-Locale'] = this.localstorage.getLocalStore('language');
-    } else {
-      headerParams['X-L10N-Locale'] = 'en';
-    }
+    const headerParams = { Authorization: '' };
+    // if (this.localstorage.getLocalStore('language')) {
+    //   headerParams['X-L10N-Locale'] = this.localstorage.getLocalStore('language');
+    // } else {
+    //   headerParams['X-L10N-Locale'] = 'en';
+    // }
     if (doNotSendAuthorizationParam !== true && this.localstorage.getLocalStore('token')) {
-      headerParams.authorization = this.localstorage.getLocalStore('token');
+      headerParams.Authorization = this.localstorage.getLocalStore('token');
     }
     if (headerOptions) {
       Object.assign(headerParams, headerOptions);
@@ -43,7 +43,7 @@ export class ApiService {
     url: string, body: any, doNotSendAuthorizationParam: boolean = false, headerOptions: any = {}, loaderContinue?) {
     return new Promise(async (resolve, reject) => {
       const options = await this.getHeader(headerOptions, doNotSendAuthorizationParam);
-      this.http.post(`${this.hostUrl}${url}`, body, options).pipe(map((res) => {
+      this.http.post(`${this.hostUrl}${url}`, body,options).pipe(map((res) => {
         if (!loaderContinue) {
           this.ngxLoader.stop();
         }
@@ -60,6 +60,7 @@ export class ApiService {
   get(url: string, doNotSendAuthorizationParam: boolean = false, headerOptions: any = {}, loaderContinue?) {
     return new Promise(async (resolve, reject) => {
       const options = await this.getHeader(headerOptions, doNotSendAuthorizationParam);
+      console.log(options)
       this.http.get(`${this.hostUrl}${url}`, options).pipe(map((res) => {
         if (!loaderContinue) {
           this.ngxLoader.stop();
@@ -110,18 +111,28 @@ export class ApiService {
   }
 
   async handleError(err) {
+    console.log(err)
     if (err.status === 400) {
-      this.error(err.error.error.message);
+      if(err.error?.new_password1 || err.error?.new_password2){
+        this.error("Error while changing password.Please try again")
+      }
+
+       else{
+        this.error(err.error.non_field_errors[0]);
+      }
+    
+ 
+      
     } else if (err.status === 404) {
-      this.error(err.error.error.message);
+      this.error(err.error.non_field_errors[0]);
     } else if (err.status === 401) {
-      this.error(err.error.error.message);
+      this.error(err.error.non_field_errors[0]);
       this.localstorage.clearAllLocalStoreData();
       this.router.navigate(['/']);
     } else if (err.status === 412) {
-      this.error(err.error.error.message);
+      this.error(err.error.non_field_errors[0]);
     } else if (err.status === 422) {
-      this.error(err.error.error.message);
+      this.error(err.error.non_field_errors[0]);
     } else if (err.status === 500) {
       this.error(ERROR_HANDLER_MESSAGE.INTERNAL_SERVER_ERROR);
     } else if (err.status === 0) {
