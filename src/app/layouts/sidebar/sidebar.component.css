@@ -16,3 +16,8 @@
 .sidemenu ul li {
     padding-top: 45px;
 }
+
+.sidemenu ul a.active {
+    color: #3BADD4;
+    font-weight: bold;
+}

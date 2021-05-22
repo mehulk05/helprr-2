@@ -452,6 +452,19 @@ i.pull-left.float-xs-left.arrow.up {
     padding-left: 25px;
 }
 
+.click {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.click button {
+    font-family: 'Poppins', sans-serif;
+    background: #3FAFD5;
+    color: #fff;
+    border-radius: 26px;
+}
+
 @media screen and (max-width:991px) {
     .sidebar {
         display: none

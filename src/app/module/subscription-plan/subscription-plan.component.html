@@ -18,7 +18,8 @@
             </div>
 
             <div class="content">
-                <p>Add powerful features in your schedule to help you do more with Helppr and save you hours do it the smarter way.</p>
+                <p>Wasting time and energy trying to cope with the information explosion? </p>
+                <p>we can help With Helppr, add powerful features in your schedule to help you do more and save you hours do it the smart way</p>
             </div>
         </div>
 
@@ -371,8 +372,25 @@
                 <div class="title4">
                     <h3>Frequently Asked Questions</h3>
                 </div>
-                <accordion [closeOthers]="true">
-                    <accordion-group *ngFor="let registration of registrationArray; let i = index" #groupval [isOpen]="registration.isAccordionOpen">
+                <accordion [closeOthers]="true" *ngIf="!showMore">
+                    <accordion-group *ngFor="let registration of registrationArray| slice:0:5; let i = index " #groupval [isOpen]="registration.isAccordionOpen">
+                        <div accordion-heading class="acc-title" style="width:100%;">
+                            <b><i class="pull-left float-xs-left arrow" [ngClass]="{'up': groupval?.isOpen, 'down': !groupval?.isOpen}"></i></b>
+                            <p>
+                                {{registration.question}}
+                            </p>
+                        </div>
+                        <div class="block font-14" [innerHtml]="registration.answer">
+                        </div>
+
+                    </accordion-group>
+
+
+                </accordion>
+
+
+                <accordion [closeOthers]="true" *ngIf="showMore">
+                    <accordion-group *ngFor="let registration of registrationArray; let i = index " #groupval [isOpen]="registration.isAccordionOpen">
                         <div accordion-heading class="acc-title" style="width:100%;">
                             <b><i class="pull-left float-xs-left arrow" [ngClass]="{'up': groupval?.isOpen, 'down': !groupval?.isOpen}"></i></b>
                             <p>
@@ -418,6 +436,12 @@
 
                     </accordion-group>
                 </accordion>
+            </div>
+
+            <div class="click" *ngIf="!showMore">
+                <button class="btn showmore" (click)="showMoreEvent()">
+                    Show More FAQS
+                </button>
             </div>
 
         </div>

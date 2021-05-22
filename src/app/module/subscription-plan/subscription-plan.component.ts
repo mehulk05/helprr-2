@@ -11,7 +11,7 @@ import { ApiService } from 'src/app/shared/api.service';
 })
 export class SubscriptionPlanComponent implements OnInit {
   isActive =true
-
+  showMore= false
   planData:any
   currentPlan:any={}
   yearlyData:any
@@ -143,5 +143,9 @@ export class SubscriptionPlanComponent implements OnInit {
   gotoPayment(){
 
     this.router.navigate(["/payment"],{queryParams:{p:btoa(this.currentPlan.price),i:btoa(this.currentPlan.priceId)}})
+  }
+
+  showMoreEvent(){
+    this.showMore =true
   }
 }

@@ -19,6 +19,9 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
 import { environment } from 'src/environments/environment';
 import { NgxStripeModule } from 'ngx-stripe';
 import { PaymentComponent } from './module/payment/payment.component';
+import { TermsAndServiceComponent } from './layouts/terms-and-service/terms-and-service.component';
+import { PrivacyPolicyComponent } from './layouts/privacy-policy/privacy-policy.component';
+import { CanLoginActivate } from './shared/auth.gaurd';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +34,8 @@ import { PaymentComponent } from './module/payment/payment.component';
     EditProfileComponent,
     ChangePasswordComponent,
     PaymentComponent,
+    TermsAndServiceComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,7 @@ import { PaymentComponent } from './module/payment/payment.component';
 
   ],
 
-  providers: [],
+  providers: [CanLoginActivate],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

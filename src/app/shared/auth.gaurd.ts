@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router, } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, } from '@angular/router';
+import { Observable } from 'rxjs';
 
 // Service
 import { LocalStorageService } from './local-storage.service';
@@ -12,13 +13,36 @@ import { LocalStorageService } from './local-storage.service';
 @Injectable()
 export class CanLoginActivate implements CanActivate {
   constructor(public localStorageService: LocalStorageService, public router: Router) { }
-  async canActivate() {
-    const token: any = await this.localStorageService.getLocalStore('token');
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean | Observable<boolean> | Promise<boolean> {
+    const token: any =  this.localStorageService.getLocalStore('token');
     if (!token) {
-      return true;
+      this.router.navigate(['/login']);
     }
-    this.router.navigate(['/home']);
-    return false;
+    return true;
   }
 }
+  // async canActivate() {
+  //   const token: any = await this.localStorageService.getLocalStore('token');
+  //   console.log(token)
+  //   if (!token) {
+  //     this.router.navigate(['/login']);
+  
+
+  //   }
+    
+  //   return token;
+  // }
+
+ 
+
+//   if (!isAuth) {
+//     this.router.navigate(['/login']);
+//   }
+//   return isAuth;
+// }
+
 /****************************************************************************/

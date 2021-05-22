@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ApiService } from 'src/app/shared/api.service';
 import { LocalStorageService } from 'src/app/shared/local-storage.service';
 
@@ -10,7 +11,8 @@ import { LocalStorageService } from 'src/app/shared/local-storage.service';
 export class SidebarComponent implements OnInit {
 
   constructor( private apiService: ApiService,
-    private localstorageService:LocalStorageService) { 
+    private localstorageService:LocalStorageService,
+    private ngxLoader: NgxUiLoaderService,) { 
    
   }
 
@@ -18,7 +20,7 @@ export class SidebarComponent implements OnInit {
   }
 
   async logout(){
-    console.log("jere")
+    this.ngxLoader.start()
     const res:any = await this.apiService.post('user/logout/',{})
     this.localstorageService.clearAllLocalStoreData()
 
