@@ -4,6 +4,7 @@ import { StripeCardElementOptions, StripeElementsOptions } from '@stripe/stripe-
 import { StripeCardComponent, StripeService } from 'ngx-stripe';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ApiService } from 'src/app/shared/api.service';
+import { LocalStorageService } from 'src/app/shared/local-storage.service';
 
 @Component({
   selector: 'app-payment',
@@ -65,13 +66,15 @@ export class PaymentComponent implements OnInit {
   constructor(private stripeService: StripeService,private activatedRoute:ActivatedRoute,
     private apiService : ApiService,
     private ngxLoader: NgxUiLoaderService,
-    private router:Router) { }
+    private router:Router,
+    private localStorage:LocalStorageService) { }
 
 
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(data=>{
       this.price = atob(data?.p)
+      this.localStorage.setLocalStore('price',this.price)
       this.priceId = atob(data?.i)
       console.log(this.price,this.priceId)
     })
@@ -101,15 +104,15 @@ export class PaymentComponent implements OnInit {
  async  confirmPayment(){
   this.ngxLoader.start()
     const reqBody = {
-      payment_method:this.cardId,
-      price_id:this.priceId
+      payment_method:this.cardId+'1',
+      price_id:this.priceId+'1'
     }
 
     const response: any = await this.apiService.post('payments/subscribe/', reqBody);
     console.log(response);
     if(response){
-      this.apiService.success("Payment Done Successfully !")
-      this.router.navigate(["/home-page"])
+     
+      this.router.navigate(["/pay-success"])
   }
 }
 }

@@ -97,7 +97,7 @@ h3 {
     border: 2px solid #3FAFD5;
     border-radius: 26px;
     min-height: 400px;
-    padding: 40px 70px;
+    padding: 40px 60px;
     margin-bottom: 25px;
 }
 
@@ -164,17 +164,17 @@ h3 {
     font-style: normal;
     font-weight: 500;
     display: inline;
-    font-size: 21px;
+    font-size: 19px;
     line-height: 46px;
     /* identical to box height, or 219% */
     color: #231D4F;
-    margin-right: 25px;
+    padding-right: 15px;
 }
 
 .bg-light1 {
     background: rgba(63, 175, 213, 0.2);
     border-radius: 26.5898px;
-    padding: 6px 20px 9px;
+    padding: 6px 10px 9px;
 }
 
 .bg-light1 span {
@@ -465,7 +465,33 @@ i.pull-left.float-xs-left.arrow.up {
     border-radius: 26px;
 }
 
+.btn-sticky {
+    padding-bottom: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    background: #fff;
+    box-shadow: 0 3px 8px rgb(0 0 0 / 10%);
+    border-bottom: 1px solid gainsboro;
+    border-radius: 20px;
+    display: none;
+}
+
+.buttons-table.btn-sticky.show-class {
+    display: block;
+    position: sticky;
+}
+
+.btn-sticky .button-right.no-text {
+    padding-top: 40px;
+}
+
+.btn-sticky .button-right {
+    padding-top: 15px;
+}
+
 @media screen and (max-width:991px) {
+    .buttons-table.btn-sticky.show-class,
     .sidebar {
         display: none
     }

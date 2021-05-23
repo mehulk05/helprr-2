@@ -11,7 +11,7 @@ import { ApiService } from 'src/app/shared/api.service';
 })
 export class EditProfileComponent implements OnInit {
   form: FormGroup;
-  previewImage="./assets/images/noimg.png"
+  previewImage="./assets/images/avtar.jpeg"
   userInfo: any;
   constructor( private apiService : ApiService,
     private ngxLoader: NgxUiLoaderService,

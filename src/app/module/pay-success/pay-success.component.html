@@ -1,0 +1,20 @@
+<div class="wrapper">
+
+
+    <div class="myaccount">
+        <div class="wrap">
+            <img src="./assets/images/pass.png">
+            <h3>Transaction Success!</h3>
+            <p *ngIf="price">
+                You have successfully paid ${{price}}.
+            </p>
+
+            <p *ngIf="!price">
+                You have successfully paid your amount.
+            </p>
+
+            <div class="pay-button">
+                <button class="btn btn-primary" (click)="goToHome()">Back To Home</button>
+            </div>
+        </div>
+    </div>

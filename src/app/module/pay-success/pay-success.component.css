@@ -1,0 +1,52 @@
+.myaccount {
+    margin: 0 auto;
+    text-align: center;
+    padding: 150px 0;
+}
+
+.myaccount h3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.1px;
+    color: #171725;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding: 40px 0 20px;
+}
+
+.myaccount p {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 28px;
+    /* or 140% */
+    text-align: center;
+    color: #000;
+    padding: 0px 0;
+}
+
+.pay-button {
+    padding: 40px 0;
+}
+
+.pay-button button {
+    font-family: 'Poppins', sans-serif;
+    background: #3BADD4;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 30px;
+    /* identical to box height, or 150% */
+    text-align: center;
+    font-feature-settings: 'liga' off;
+    /* Default / White */
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+}

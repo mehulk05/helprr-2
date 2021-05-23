@@ -22,6 +22,8 @@ import { PaymentComponent } from './module/payment/payment.component';
 import { TermsAndServiceComponent } from './layouts/terms-and-service/terms-and-service.component';
 import { PrivacyPolicyComponent } from './layouts/privacy-policy/privacy-policy.component';
 import { CanLoginActivate } from './shared/auth.gaurd';
+import { PaySuccessComponent } from './module/pay-success/pay-success.component';
+import { PayFailureComponent } from './module/pay-failure/pay-failure.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,8 @@ import { CanLoginActivate } from './shared/auth.gaurd';
     PaymentComponent,
     TermsAndServiceComponent,
     PrivacyPolicyComponent,
+    PaySuccessComponent,
+    PayFailureComponent,
   ],
   imports: [
     BrowserModule,

@@ -160,6 +160,10 @@ button.bg-blue {
     padding: 11px 57px;
 }
 
+.profileimg img {
+    width: 100px;
+}
+
 @media screen and (max-width:991px) {
     .sidebar {
         display: none

@@ -117,8 +117,15 @@ export class ApiService {
         this.error("Error while changing password.Please try again")
       }
 
-       else{
+       else if(err.error.non_field_errors){
         this.error(err.error.non_field_errors[0]);
+      }
+      else if(err.url == "https://dev.helppr.ai/payments/subscribe/"){
+        this.router.navigate(["/pay-failure"])
+        this.error("Payment Request Failed, Please try again later")
+      }
+      else{
+        this.error(JSON.stringify(err.error))
       }
     
  

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ApiService } from 'src/app/shared/api.service';
 
 @Component({
@@ -10,6 +11,7 @@ export class HomePageComponent implements OnInit {
   userInfo: any;
   isFreePlan:any
   constructor(
+    private ngxLoader: NgxUiLoaderService,
     private apiService : ApiService
   ) {}
 
@@ -17,6 +19,7 @@ export class HomePageComponent implements OnInit {
     this.getUserDetails()
   }
   async getUserDetails() {
+    this.ngxLoader.start()
     const res:any = await this.apiService.get('user/modify/user/')
     if(res){
       console.log(res)

@@ -1,3 +1,28 @@
+<div class="buttons-table btn-sticky">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="butons button-right">
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="butons button-right no-text">
+                    <button class="light-color">Current Plan</button>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 pl-0">
+                <div class="table-content">
+                    <p>${{currentPlan?.price}}</p>
+                </div>
+                <div class="butons button-right">
+                    <button class="bg-color" (click)="gotoPayment()">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 <div class="wrapper">
 
 
@@ -12,7 +37,7 @@
     </div>
 
     <div class="plan">
-        <div class="div1 bg-blue">
+        <div class="div1 bg-blue" id="plan">
             <div class="plan-title">
                 <h3>Helppr Plans</h3>
             </div>
@@ -22,6 +47,7 @@
                 <p>we can help With Helppr, add powerful features in your schedule to help you do more and save you hours do it the smart way</p>
             </div>
         </div>
+
 
 
         <div class="compare">
@@ -135,7 +161,7 @@
             </div>
         </div>
 
-        <div class="compare-table">
+        <div class="compare-table" id="plan2">
             <div class="pricing">
                 <div class="row mx-0">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-4 px-0 bg-blue first-div">
@@ -344,7 +370,7 @@
             </div>
         </div>
 
-        <div class="buttons-table">
+        <div class="buttons-table" id="plan3">
             <div class="row">
                 <div class="col-lg-4 col-md-4">
                     <div class="butons button-right">
@@ -367,7 +393,7 @@
             </div>
         </div>
 
-        <div class="faq">
+        <div class="faq" id="plan4">
             <div class="bg-faq">
                 <div class="title4">
                     <h3>Frequently Asked Questions</h3>

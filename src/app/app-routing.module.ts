@@ -6,6 +6,8 @@ import { ChangePasswordComponent } from './module/change-password/change-passwor
 import { EditProfileComponent } from './module/edit-profile/edit-profile.component';
 import { HomePageComponent } from './module/home-page/home-page.component';
 import { LoginComponent } from './module/login/login.component';
+import { PayFailureComponent } from './module/pay-failure/pay-failure.component';
+import { PaySuccessComponent } from './module/pay-success/pay-success.component';
 import { PaymentComponent } from './module/payment/payment.component';
 import { SubscriptionPlanComponent } from './module/subscription-plan/subscription-plan.component';
 import { CanLoginActivate } from './shared/auth.gaurd';
@@ -19,12 +21,15 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'terms-of-service', component: TermsAndServiceComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'pay-success', component: PaySuccessComponent,canActivate: [CanLoginActivate] },
+  { path: 'pay-failure', component: PayFailureComponent,canActivate: [CanLoginActivate] },
   { path: 'payment', component: PaymentComponent,canActivate: [CanLoginActivate] },
   { path: 'subscription-plan', component: SubscriptionPlanComponent,canActivate: [CanLoginActivate] },
   { path: '**', redirectTo: 'home-page' }
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  imports: [RouterModule.forRoot(routes, { useHash: true,
+    scrollPositionRestoration: 'enabled' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

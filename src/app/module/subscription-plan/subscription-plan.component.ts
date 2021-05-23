@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AccordionComponent } from 'ngx-bootstrap/accordion';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ApiService } from 'src/app/shared/api.service';
+import * as $ from 'jquery';
+//
 
 @Component({
   selector: 'app-subscription-plan',
@@ -93,6 +95,32 @@ export class SubscriptionPlanComponent implements OnInit {
       private router:Router) { }
 
   async ngOnInit() {
+    $(document).scroll(function() {
+      var lastscroll =0
+      var y
+      var st = $(this).scrollTop();
+      y=st
+      var headerheight = $('#plan').outerHeight() + $('.plan-wrapper').height()+100
+      var plan2 = $('#plan3').offset().top - ($(this).scrollTop()+$('#plan3').height()+$('#plan3').height())
+
+      var plan3 = $('#plan4').offset().top - ($(this).scrollTop())
+      if(st>lastscroll && st > headerheight && plan2>200 || (st>lastscroll && st  && plan3<100)){
+        $('.btn-sticky').addClass("show-class");
+      }else{
+        $('.btn-sticky').removeClass("show-class");
+      }
+
+      
+      console.log(headerheight,plan2,plan3)
+      console.log(y,$('#plan4').offset().top)
+      // if (y > 400) {
+      //   // $('.btn-sticky').fadeIn();
+      //   $('.btn-sticky').addClass("show-class");
+      // } else {
+      //   // $('.btn-sticky').fadeOut();
+      //   $('.btn-sticky').removeClass("show-class");
+      // }
+    });
     this.currentPlan.type ="Yearly"
     this.ngxLoader.start()
     const response: any = await this.apiService.get('payments/config/')
