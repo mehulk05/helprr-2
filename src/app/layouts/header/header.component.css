@@ -32,11 +32,22 @@
 
 .profile-img img {
     width: 32px;
+    cursor: pointer;
+}
+
+.hamburger .fa {
+    font-size: 24px;
+    vertical-align: sub;
+}
+
+.hamburger {
+    display: none;
 }
 
 @media screen and (max-width:991px) {
-    .sidebar {
-        display: none
+    .hamburger {
+        display: inline;
+        padding-left: 15px;
     }
 }
 

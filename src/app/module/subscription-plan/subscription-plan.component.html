@@ -12,9 +12,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 pl-0">
-                <div class="table-content">
-                    <p>${{currentPlan?.price}}</p>
-                </div>
+
                 <div class="butons button-right">
                     <button class="bg-color" (click)="gotoPayment()">Get Started</button>
                 </div>
@@ -67,7 +65,7 @@
                         <div class="left-div-points">
                             <div class="points">
                                 <img src="./assets/images/check1.png">
-                                <p>Advanced Al Summaries</p>
+                                <p>Advanced Al Summary Generation</p>
                             </div>
 
                             <div class="points">
@@ -104,7 +102,9 @@
                                 </div>
                             </div>
                             <div class="content2">
-                                <p>$ {{currentPlan?.price}}/ {{currentPlan?.type}} {{currentPlan?.type=="Yearly" ? '(20% OFF)' : ''}}</p>
+                                <p>$ {{currentPlan?.price}}/ {{currentPlan?.type}}
+                                    <span class="bg-light-offer" *ngIf="currentPlan?.type=='Yearly' ">(20% OFF)</span>
+                                </p>
                                 <span class="bg-light1" *ngIf="currentPlan?.type == 'Yearly'">
                                     <span>Recommended</span>
                                 </span>

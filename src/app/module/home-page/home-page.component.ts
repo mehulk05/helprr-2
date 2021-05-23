@@ -19,6 +19,7 @@ export class HomePageComponent implements OnInit {
     this.getUserDetails()
   }
   async getUserDetails() {
+    this.apiService.setHideHamburgerMenu(false)
     this.ngxLoader.start()
     const res:any = await this.apiService.get('user/modify/user/')
     if(res){

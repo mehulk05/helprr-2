@@ -21,3 +21,17 @@
     color: #3BADD4;
     font-weight: bold;
 }
+
+.sidemenu.showMobile {
+    display: block;
+}
+
+@media screen and (max-width:991px) {
+    .sidemenu {
+        display: none;
+    }
+    .sidemenu.showMobile {
+        display: block;
+        height: 100vh;
+    }
+}

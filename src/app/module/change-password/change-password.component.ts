@@ -20,6 +20,7 @@ export class ChangePasswordComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.apiService.setHideHamburgerMenu(false)
     this.createForm()
   }
   createForm() {

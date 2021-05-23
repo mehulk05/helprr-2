@@ -9,7 +9,11 @@
                 <img src="./assets/images/Shape.png">
             </div>
             <div class="profile-img">
-                <img src="./assets/images/avtar.jpeg">
+                <img (click)="gotoHome()" src="./assets/images/avtar.jpeg">
+            </div>
+            <div class="hamburger" (click)="showMenu()" *ngIf="!hideHamburgerMenu">
+                <i *ngIf="!isshowMenu" class="fa fa-bars"></i>
+                <i *ngIf="isshowMenu" class="fa fa-close"></i>
             </div>
         </div>
     </div>

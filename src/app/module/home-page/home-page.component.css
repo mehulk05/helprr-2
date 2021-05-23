@@ -165,11 +165,11 @@ button.bg-blue {
 }
 
 @media screen and (max-width:991px) {
-    .sidebar {
-        display: none
-    }
     .right-div .content2 {
         padding-top: 40px
+    }
+    .sidebar {
+        width: auto;
     }
 }
 

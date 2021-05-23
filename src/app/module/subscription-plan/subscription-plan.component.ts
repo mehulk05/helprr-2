@@ -95,6 +95,7 @@ export class SubscriptionPlanComponent implements OnInit {
       private router:Router) { }
 
   async ngOnInit() {
+    this.apiService.setHideHamburgerMenu(true)
     $(document).scroll(function() {
       var lastscroll =0
       var y

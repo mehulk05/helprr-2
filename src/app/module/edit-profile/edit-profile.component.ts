@@ -18,6 +18,7 @@ export class EditProfileComponent implements OnInit {
     private router:Router) { }
 
   ngOnInit(): void {
+    this.apiService.setHideHamburgerMenu(false)
     this.createForm()
     this.getUserInfo()
   }

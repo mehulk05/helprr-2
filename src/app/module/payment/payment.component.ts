@@ -72,6 +72,7 @@ export class PaymentComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.apiService.setHideHamburgerMenu(true)
     this.activatedRoute.queryParams.subscribe(data=>{
       this.price = atob(data?.p)
       this.localStorage.setLocalStore('price',this.price)

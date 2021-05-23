@@ -59,6 +59,9 @@ footer .inner .social a+a {
     /* identical to box height, or 200% */
     font-feature-settings: 'liga' off;
     color: #FFFFFF;
-    padding-right: 20px;
     font-family: 'Poppins', sans-serif;
+}
+
+.link a+a {
+    margin-left: 20px;
 }

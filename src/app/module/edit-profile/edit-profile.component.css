@@ -136,9 +136,17 @@ input {
     border: none;
 }
 
+.myaccount {
+    padding-bottom: 300px !important;
+}
+
+.user-leftimg {
+    pointer-events: none;
+}
+
 @media screen and (max-width:991px) {
     .sidebar {
-        display: none
+        width: auto;
     }
 }
 

@@ -8,12 +8,15 @@ import { LocalStorageService } from './local-storage.service';
 import { Router } from '@angular/router';
 import { ERROR_HANDLER_MESSAGE } from '../common/constant';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   private hostUrl = environment.APP_URL;
+  isShowMenu = new BehaviorSubject(false)
+  ishideHamburgerMenu = new BehaviorSubject(false)
   constructor(
     public http: HttpClient,
     private ngxLoader: NgxUiLoaderService,
@@ -22,6 +25,12 @@ export class ApiService {
     private router: Router
   ) { }
 
+  setHeaderMenuForMobile(flag){
+    this.isShowMenu.next(flag)
+  }
+  setHideHamburgerMenu(flag){
+    this.ishideHamburgerMenu.next(flag)
+  }
   getHeader(headerOptions, doNotSendAuthorizationParam) {
     const headerParams = { Authorization: '' };
     // if (this.localstorage.getLocalStore('language')) {
@@ -122,7 +131,7 @@ export class ApiService {
       }
       else if(err.url == "https://dev.helppr.ai/payments/subscribe/"){
         this.router.navigate(["/pay-failure"])
-        this.error("Payment Request Failed, Please try again later")
+       
       }
       else{
         this.error(JSON.stringify(err.error))

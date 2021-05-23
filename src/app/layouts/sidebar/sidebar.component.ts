@@ -10,6 +10,7 @@ import { LocalStorageService } from 'src/app/shared/local-storage.service';
 })
 export class SidebarComponent implements OnInit {
 
+  isShowMenu:any
   constructor( private apiService: ApiService,
     private localstorageService:LocalStorageService,
     private ngxLoader: NgxUiLoaderService,) { 
@@ -17,6 +18,10 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.apiService.isShowMenu.subscribe(data=>{
+      console.log(data)
+      this.isShowMenu =data
+    })
   }
 
   async logout(){

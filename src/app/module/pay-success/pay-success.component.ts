@@ -14,6 +14,7 @@ export class PaySuccessComponent implements OnInit {
   private localStorage:LocalStorageService
 
   ngOnInit(): void {
+    
     if (localStorage.getItem("price") === null) {
       this.price =  this.localStorage.getLocalStore('price')
     }
