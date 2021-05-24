@@ -36,18 +36,18 @@
                             <div class="content">
                                 <label>CurrentPlan : </label>
                                 <p>Free</p>
-                                <button class="bg-blue" *ngIf="isFreePlan">
+                                <button class="bg-blue" *ngIf="isFreePlan" (click)="changeRoute('/subscription-plan')">
                                     <a routerLink="/subscription-plan">Upgrade</a>
                                 </button>
                             </div>
 
                             <div class="content">
                                 <div class="butttons">
-                                    <button class="bg-white">
+                                    <button class="bg-white" (click)="changeRoute('/edit-profile')">
                                         <a routerLink="/edit-profile">Edit Account</a>
                                     </button>
 
-                                    <button class="bg-white">
+                                    <button class="bg-white" (click)="changeRoute('/change-password')">
                                         <a routerLink="/change-password">Change Password</a>
                                     </button>
                                 </div>
@@ -102,7 +102,7 @@
 
 
                             <div class="button-upgrade" *ngIf="isFreePlan">
-                                <button class="bg-blue">
+                                <button class="bg-blue" (click)="changeRoute('/subscription-plan')">
                                     <a routerLink="/subscription-plan">Upgrade now</a>
                                 </button>
                             </div>

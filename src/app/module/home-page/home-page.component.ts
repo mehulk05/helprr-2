@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ApiService } from 'src/app/shared/api.service';
 
@@ -12,7 +13,8 @@ export class HomePageComponent implements OnInit {
   isFreePlan:any
   constructor(
     private ngxLoader: NgxUiLoaderService,
-    private apiService : ApiService
+    private apiService : ApiService,
+    private router:Router
   ) {}
 
   ngOnInit() {
@@ -30,4 +32,7 @@ export class HomePageComponent implements OnInit {
     } 
   }
 
+  changeRoute(flag){
+    this.router.navigate([flag])
+  }
 }
