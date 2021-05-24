@@ -62,7 +62,7 @@ h3 {
 .div1 h3 {
     font-family: 'Poppins', sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 35px;
     line-height: 36px;
     /* identical to box height, or 103% */
@@ -74,7 +74,7 @@ h3 {
 .div1 p {
     font-style: normal;
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 28px;
     /* or 140% */
     text-align: center;

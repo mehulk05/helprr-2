@@ -1,7 +1,7 @@
 .myaccount {
     margin: 0 auto;
     text-align: center;
-    padding: 80px 0;
+    padding: 30px 0;
 }
 
 .myaccount h3 {
@@ -65,4 +65,8 @@
     color: #E04F5F;
     border: 1px solid #E04F5F;
     padding: 8px 30px;
+}
+
+.wrap img {
+    max-width: 350px;
 }
