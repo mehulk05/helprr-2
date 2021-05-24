@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./terms-and-service.component.css']
 })
 export class TermsAndServiceComponent implements OnInit {
-
+  isactive:boolean =false
+  switch:any
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getToggleValue(e){
+    this.isactive =this.switch
+    console.log(this.switch,e)
   }
 
 }

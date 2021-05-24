@@ -35,7 +35,8 @@
 
                             <div class="content">
                                 <label>CurrentPlan : </label>
-                                <p>Free</p>
+                                <p *ngIf="isFreePlan">Free</p>
+                                <p *ngIf="!isFreePlan">Premium</p>
                                 <button class="bg-blue" *ngIf="isFreePlan" (click)="changeRoute('/subscription-plan')">
                                     <a routerLink="/subscription-plan">Upgrade</a>
                                 </button>
@@ -60,10 +61,11 @@
             </div>
         </div>
 
-        <div class="plan-section">
+        <div class="plan-section" *ngIf="isFreePlan">
             <div class="plan">
                 <div class="plan-title">
-                    <h3>Current Plan - Free</h3>
+                    <h3 *ngIf="isFreePlan">Current Plan - Free</h3>
+
                 </div>
 
                 <div class="row">
@@ -92,11 +94,13 @@
                                 <p>Access To Discussion Forums (Coming Soon)</p>
                             </div>
                         </div>
+
+
                     </div>
 
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="right-div">
-                            <div class="content2">
+                            <div class="content2" *ngIf="isFreePlan">
                                 <p>Add powerful features in your schedule to help you do more with Helppr and save you hours do it the smarter way.</p>
                             </div>
 
@@ -107,6 +111,74 @@
                                 </button>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="plan-section" *ngIf="!isFreePlan">
+            <div class="plan">
+                <div class="plan-title">
+                    <h3>Current Plan - Premium</h3>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="left-div">
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Advanced Al Summary Generation</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Important Keyword Extraction</p>
+                            </div>
+
+
+
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Sentence Simplification</p>
+                            </div>
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Distraction and ad free reading (Coming Soon)</p>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-lg-6 col-md-12">
+                        <div class="left-div">
+
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Inbuild Translation</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Audio File Generator</p>
+                            </div>
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Word/Concept Explanation</p>
+                            </div>
+
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Access To Discussion Forums (Coming Soon)</p>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
