@@ -1,6 +1,7 @@
 .sidemenu ul {
     list-style: none;
     padding-left: 10px;
+    padding-top: 25px;
 }
 
 .sidemenu ul a {
@@ -14,7 +15,7 @@
 }
 
 .sidemenu ul li {
-    padding-top: 45px;
+    padding-bottom: 45px;
 }
 
 .sidemenu ul a.active {

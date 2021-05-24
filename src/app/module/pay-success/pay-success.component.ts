@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/shared/api.service';
 import { LocalStorageService } from 'src/app/shared/local-storage.service';
 
 @Component({
@@ -10,11 +11,11 @@ import { LocalStorageService } from 'src/app/shared/local-storage.service';
 export class PaySuccessComponent implements OnInit {
 
   price:any
-  constructor(private router:Router,) { }
+  constructor(private router:Router,private apiService : ApiService,) { }
   private localStorage:LocalStorageService
 
   ngOnInit(): void {
-    
+    this.apiService.setHideHamburgerMenu(true)
     if (localStorage.getItem("price") === null) {
       this.price =  this.localStorage.getLocalStore('price')
     }

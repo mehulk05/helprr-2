@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/shared/api.service';
 
 @Component({
   selector: 'app-pay-failure',
@@ -7,9 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./pay-failure.component.css']
 })
 export class PayFailureComponent implements OnInit {
-  constructor(private router:Router) { }
+  constructor(private router:Router,private apiService : ApiService,) { }
 
   ngOnInit(): void {
+    this.apiService.setHideHamburgerMenu(true)
   }
 
   goToHome(){

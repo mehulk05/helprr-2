@@ -509,6 +509,7 @@ i.pull-left.float-xs-left.arrow.up {
 }
 
 @media screen and (max-width:991px) {
+    div#plan3,
     .buttons-table.btn-sticky.show-class {
         display: none
     }
@@ -584,13 +585,14 @@ i.pull-left.float-xs-left.arrow.up {
         font-family: 'Poppins', sans-serif;
         font-style: normal;
         font-weight: 500;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 29px;
         /* identical to box height */
         color: #FFFFFF;
     }
     .compare-table .content p {
-        font-size: 14px;
+        font-size: 12px;
+        word-break: break-word;
     }
     .compare-table .border-line::after {
         content: none;
@@ -601,6 +603,9 @@ i.pull-left.float-xs-left.arrow.up {
     .butons.button-right,
     .table-content {
         padding-top: 25px;
+    }
+    .tick img {
+        width: 25px;
     }
 }
 
