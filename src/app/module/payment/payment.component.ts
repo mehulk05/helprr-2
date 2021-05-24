@@ -105,8 +105,8 @@ export class PaymentComponent implements OnInit {
  async  confirmPayment(){
   this.ngxLoader.start()
     const reqBody = {
-      payment_method:this.cardId+'1',
-      price_id:this.priceId+'1'
+      payment_method:this.cardId,
+      price_id:this.priceId
     }
 
     const response: any = await this.apiService.post('payments/subscribe/', reqBody);
