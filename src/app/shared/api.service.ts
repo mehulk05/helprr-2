@@ -129,7 +129,7 @@ export class ApiService {
        else if(err.error.non_field_errors){
         this.error(err.error.non_field_errors[0]);
       }
-      else if(err.url == "https://dev.helppr.ai/payments/subscribe/"){
+      else if(err.url == "https://dev.helppr.ai/payments/subscribe/" || err.url == "https://uat.helppr.ai/payments/subscribe/"){
         this.router.navigate(["/pay-failure"])
        
       }
@@ -142,7 +142,8 @@ export class ApiService {
     } else if (err.status === 404) {
       this.error(err.error.non_field_errors[0]);
     } else if (err.status === 401) {
-      this.error(err.error.non_field_errors[0]);
+      console.log(err)
+      this.error(err.error.non_field_errors);
       this.localstorage.clearAllLocalStoreData();
       this.router.navigate(['/']);
     } else if (err.status === 412) {

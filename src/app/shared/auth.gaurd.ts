@@ -18,11 +18,27 @@ export class CanLoginActivate implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean | Observable<boolean> | Promise<boolean> {
+    let url: string = state.url;
+    console.log(state)
+    return this.checkLogin(url);
+    // const token: any =  this.localStorageService.getLocalStore('token');
+    // if (!token) {
+    //   this.router.navigate(['/login']);
+    // }
+    // return true;
+  }
+
+  checkLogin(url): boolean {
+    //if (this.authService.isLoggedIn) { return true; }
     const token: any =  this.localStorageService.getLocalStore('token');
-    if (!token) {
-      this.router.navigate(['/login']);
-    }
-    return true;
+    if(token) {return true;}
+    // Store the attempted URL for redirecting
+    this.localStorageService.setLocalStore("redirectUrl",url)
+
+    // Navigate to the login page with extras
+    this.router.navigate(['/login'],{ queryParams: { url}});
+    return false;
+
   }
 }
   // async canActivate() {

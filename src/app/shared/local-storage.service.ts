@@ -39,6 +39,7 @@ export class LocalStorageService {
   }
 
   clearAllLocalStoreData() {
+    localStorage.clear()
     this.clearStorageFor('LoggedUser');
     this.clearStorageFor('token');
     this.router.navigate(["/login"])

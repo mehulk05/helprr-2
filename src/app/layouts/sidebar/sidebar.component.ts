@@ -26,6 +26,7 @@ export class SidebarComponent implements OnInit {
 
   async logout(){
     this.ngxLoader.start()
+    this.localstorageService.clearAllLocalStoreData()
     const res:any = await this.apiService.post('user/logout/',{})
     this.localstorageService.clearAllLocalStoreData()
 

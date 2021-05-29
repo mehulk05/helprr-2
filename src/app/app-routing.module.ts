@@ -24,8 +24,8 @@ const routes: Routes = [
   { path: 'pay-success', component: PaySuccessComponent,canActivate: [CanLoginActivate] },
   { path: 'pay-failure', component: PayFailureComponent,canActivate: [CanLoginActivate] },
   { path: 'payment', component: PaymentComponent,canActivate: [CanLoginActivate] },
-  { path: 'subscription-plan', component: SubscriptionPlanComponent,canActivate: [CanLoginActivate] },
-  { path: '**', redirectTo: 'home-page' }
+  { path: 'subscription-plan', component: SubscriptionPlanComponent,  },
+  // { path: '**', redirectTo: 'home-page' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { useHash: true,
