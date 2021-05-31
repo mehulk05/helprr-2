@@ -4,6 +4,8 @@ import { AccordionComponent } from 'ngx-bootstrap/accordion';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ApiService } from 'src/app/shared/api.service';
 import * as $ from 'jquery';
+import { LocalStorageService } from 'src/app/shared/local-storage.service';
+import { environment } from 'src/environments/environment';
 //
 
 @Component({
@@ -90,9 +92,10 @@ export class SubscriptionPlanComponent implements OnInit {
       },
     ]
     @ViewChild(AccordionComponent) accordion: AccordionComponent;
+
     constructor( private apiService : ApiService,
       private ngxLoader: NgxUiLoaderService,
-      private router:Router) { }
+      private router:Router,private localStorageService:LocalStorageService) { }
 
   async ngOnInit() {
     this.apiService.setHideHamburgerMenu(true)
@@ -176,5 +179,15 @@ export class SubscriptionPlanComponent implements OnInit {
 
   showMoreEvent(){
     this.showMore =true
+  }
+
+  gotoBack(){
+    const token: any =  this.localStorageService.getLocalStore('token');
+    if(token){
+      this.router.navigate(["/"])
+    }
+    else{
+      window.location.href = environment.LANDING_PAGE_URL
+    }
   }
 }
