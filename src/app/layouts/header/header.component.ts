@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/shared/api.service';
+import { LocalStorageService } from 'src/app/shared/local-storage.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   isshowMenu
   hideHamburgerMenu:any
   constructor( private router:Router,
-    private apiService : ApiService,) { }
+    private apiService : ApiService,private localStorageService:LocalStorageService) { }
 
   ngOnInit(): void {
     this.apiService.ishideHamburgerMenu.subscribe(data=>{
@@ -30,6 +31,12 @@ export class HeaderComponent implements OnInit {
   }
 
   gotoLandingPage(){
-    window.location.href = environment.LANDING_PAGE_URL
+    const token: any =  this.localStorageService.getLocalStore('token');
+    if(token){
+      this.router.navigate(["/"])
+    }
+    else{
+      window.location.href = environment.LANDING_PAGE_URL
+    }
   }
 }
