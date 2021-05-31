@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +43,7 @@ export class LocalStorageService {
     localStorage.clear()
     this.clearStorageFor('LoggedUser');
     this.clearStorageFor('token');
-    this.router.navigate(["/login"])
+     window.location.href = environment.LANDING_PAGE_URL
   }
 
 }

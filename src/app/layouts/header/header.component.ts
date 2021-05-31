@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/shared/api.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -26,5 +27,9 @@ export class HeaderComponent implements OnInit {
     showMenu(){
       this.isshowMenu =!this.isshowMenu
       this.apiService.setHeaderMenuForMobile(this.isshowMenu)
+  }
+
+  gotoLandingPage(){
+    window.location.href = environment.LANDING_PAGE_URL
   }
 }

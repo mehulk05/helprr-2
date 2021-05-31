@@ -29,6 +29,7 @@ export class SidebarComponent implements OnInit {
     this.localstorageService.clearAllLocalStoreData()
     const res:any = await this.apiService.post('user/logout/',{})
     this.localstorageService.clearAllLocalStoreData()
+    
 
   }
 

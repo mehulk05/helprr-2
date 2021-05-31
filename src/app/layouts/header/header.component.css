@@ -7,10 +7,12 @@
 .logo img {
     width: 86.81px;
     height: 42.39px;
+    cursor: pointer;
 }
 
 .logo {
     float: left;
+    cursor: pointer;
 }
 
 .notification {
