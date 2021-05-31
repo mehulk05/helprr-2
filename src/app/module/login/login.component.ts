@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   isLoginMode = true;
   error: any = null;
   redirectUrl ="/"
+  mainUrl:any
   constructor(
     private apiService: ApiService,
     private ngxLoader: NgxUiLoaderService,
@@ -22,11 +23,15 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.mainUrl = window.location.href.split('#')
+    console.log(",ain",this.mainUrl)
     this.activatedRoute.queryParams.subscribe((data:any)=>{
       this.redirectUrl =data.url
       console.log("data", this.redirectUrl)
       console.log(this.activatedRoute)
-      console.log(window.location.host)
+
+
+      console.log(this.mainUrl + "#" + this.redirectUrl)
     })
   }
 
@@ -62,7 +67,8 @@ export class LoginComponent implements OnInit {
        
         if( this.redirectUrl){
           // console.log(  window.location.protocol+"//"+ window.location.host+ "/#" + redirectUrl)
-          window.location.href =  window.location.protocol+"//"+ window.location.host+ "/#" + this.redirectUrl
+      //    window.location.href =  window.location.protocol+"//"+ window.location.host+ "/#" + this.redirectUrl
+           window.location.href = this.mainUrl +"#" + this.redirectUrl
          //window.location.href='http://www.cnn.com/';
         }
         else{
