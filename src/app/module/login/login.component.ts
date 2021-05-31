@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.mainUrl = window.location.href.split('#')
+    this.mainUrl = window.location.href.split('#')[0]
     console.log(",ain",this.mainUrl)
     this.activatedRoute.queryParams.subscribe((data:any)=>{
       this.redirectUrl =data.url
@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
         if( this.redirectUrl){
           // console.log(  window.location.protocol+"//"+ window.location.host+ "/#" + redirectUrl)
       //    window.location.href =  window.location.protocol+"//"+ window.location.host+ "/#" + this.redirectUrl
-           window.location.href = this.mainUrl +"#" + this.redirectUrl
+           window.location.href = this.mainUrl + "#" + this.redirectUrl
          //window.location.href='http://www.cnn.com/';
         }
         else{
