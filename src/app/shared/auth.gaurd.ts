@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, } from '@angular/router';
-import { Observable } from 'rxjs';
+
+import { BehaviorSubject, Observable } from 'rxjs';
+import { ApiService } from './api.service';
 
 // Service
 import { LocalStorageService } from './local-storage.service';
@@ -12,8 +14,8 @@ import { LocalStorageService } from './local-storage.service';
 /****************************************************************************/
 @Injectable()
 export class CanLoginActivate implements CanActivate {
-  constructor(public localStorageService: LocalStorageService, public router: Router) { }
-
+  constructor(public localStorageService: LocalStorageService, public router: Router,private apiService:ApiService) { }
+ 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -34,9 +36,9 @@ export class CanLoginActivate implements CanActivate {
     if(token) {return true;}
     // Store the attempted URL for redirecting
     this.localStorageService.setLocalStore("redirectUrl",url)
-
+    this.apiService.isAuthenticatedUser()
     // Navigate to the login page with extras
-    this.router.navigate(['/login'],{ queryParams: { url}});
+   // this.router.navigate(['/login'],{ queryParams: { url}});
     return false;
 
   }

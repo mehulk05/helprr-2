@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { EventEmitter, Inject, Injectable, Output } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
@@ -17,6 +17,7 @@ export class ApiService {
   private hostUrl = environment.APP_URL;
   isShowMenu = new BehaviorSubject(false)
   ishideHamburgerMenu = new BehaviorSubject(false)
+  @Output() isAuthenticated = new EventEmitter<any>();
   constructor(
     public http: HttpClient,
     private ngxLoader: NgxUiLoaderService,
@@ -31,6 +32,11 @@ export class ApiService {
   setHideHamburgerMenu(flag){
     this.ishideHamburgerMenu.next(flag)
   }
+
+  isAuthenticatedUser(){
+    this.isAuthenticated.emit()
+  }
+  
   getHeader(headerOptions, doNotSendAuthorizationParam) {
     const headerParams = { Authorization: '' };
     // if (this.localstorage.getLocalStore('language')) {

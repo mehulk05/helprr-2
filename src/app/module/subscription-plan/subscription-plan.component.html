@@ -50,7 +50,7 @@
 
         <div class="compare">
             <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12 div-border">
+                <div class="col-lg-6 col-md-12 col-sm-12 div-border" *ngIf="isAuth">
                     <div class="div-left ">
                         <div class="plan-wrapper">
                             <div class="tile1">
@@ -89,6 +89,44 @@
                     </div>
                 </div>
 
+                <div class="col-lg-6 col-md-12 col-sm-12 div-border" *ngIf="!isAuth">
+                    <div class="div-left ">
+                        <div class="plan-wrapper">
+                            <div class="tile1">
+                                <h3>Free </h3>
+                            </div>
+                        </div>
+                        <div class="bg-blue-button">
+                            <button class="btn-blue" (click)="gotoPayment()">
+                                Get Started
+                            </button>
+                        </div>
+                        <div class="left-div-points">
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Advanced Al Summary Generation</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Important Keyword Extraction</p>
+                            </div>
+
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Word/Concept Explanation</p>
+                            </div>
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Important Data Extraction</p>
+                            </div>
+                            <div class="points">
+                                <img src="./assets/images/check1.png">
+                                <p>Access To Discussion Forums (Coming Soon)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <div class="div-right div-border">
                         <div class="plan-wrapper">
