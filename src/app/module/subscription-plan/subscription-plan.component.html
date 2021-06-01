@@ -6,9 +6,15 @@
 
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4">
+            <div class="col-lg-4 col-md-4" *ngIf="isAuth">
                 <div class="butons button-right no-text">
                     <button class="light-color">Current Plan</button>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4" *ngIf="!isAuth">
+                <div class="butons button-right no-text">
+                    <button class="bg-color">Get Started</button>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 pl-0">
@@ -415,9 +421,14 @@
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-4 col-md-4" *ngIf="isAuth">
                     <div class="butons button-right no-text">
                         <button class="light-color">Current Plan</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4" *ngIf="!isAuth">
+                    <div class="butons button-right no-text">
+                        <button class="bg-color">Get Started</button>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
