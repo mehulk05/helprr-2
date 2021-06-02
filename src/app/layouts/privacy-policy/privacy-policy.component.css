@@ -170,3 +170,30 @@ span.bg-blue {
 ul {
     padding: 15px;
 }
+
+@media screen and (max-width:767px) {
+    .header {
+        padding: 20px 20px;
+    }
+    .wrapper {
+        display: block;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .toggle-part,
+    .title {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    .toggle-part {
+        padding-top: 25px;
+    }
+    .title-wrapper {
+        padding-bottom: 30px;
+    }
+    .myaccount {
+        padding: 30px 20px 50px 40px;
+        width: 100%;
+    }
+}
